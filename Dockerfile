@@ -1,7 +1,7 @@
 FROM node:0.12
 
 # Install MongoDB
-ENV MONGO_VERSION 2.6.10
+ENV MONGO_VERSION 3.0.4
 RUN curl -SL "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGO_VERSION.tgz" | tar -xz -C /usr/local --strip-components=1
 
 # Setup DB data volume
