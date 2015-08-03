@@ -10,11 +10,11 @@ VOLUME /data/db
 # Install global npm dependencies
 RUN npm install -g grunt-cli bower
 
-# Set the working dir
-WORKDIR /src
-
 # Create a new user
-RUN adduser dev
+RUN useradd -ms /bin/bash dev
+
+# Set the working dir
+WORKDIR /home/dev/src
 
 # Start MongoDB and a terminal session on startup
 ENV MONGOD_START "mongod --fork --logpath /var/log/mongodb.log --logappend --smallfiles"
